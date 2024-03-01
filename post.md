@@ -99,13 +99,13 @@ void loop() {
 **Code explanation:** 
 - In this code, we take in the `TRIG` of the sensor from the `PIN 19`, `ECHO` from the `PIN 11`. The buzzer is connected via `PIN 9`. 
 
-- Out of the 3 pins we take in, `ECHO` is the distance input we take from the sensor. `TRIG` is the triggers it send out to signal corresponding to the distance input. The buzzer will be triggered by the output and send out the sound via `BUZZER_PIN`. 
+- Out of the 3 pins we take in, `ECHO` is the distance input we take from the sensor. `TRIG` is the triggers it sends out to signal corresponding to the distance input. The buzzer will be triggered by the output and send out the sound via `BUZZER_PIN`. 
 
 - We used `pulseIn` to take in the duration of the pulse sent by the sensor. This has information about the distance of the object that the sensor is sensing. Once we have the duration, we need to convert it into `cm` distance. For this program, we only take in distance within 100 cm (which can be higher value if we use another power supply such as a battery). Hence, we will need to check if our input is in range using `if (distance_cm > 0 && distance_cm <= 100)`
 
-- Now, let's map our distance value with the sound we want the buzzer to emit. We want the sound to be high when we are close to the sensor and low when the objetc is far away. For this step to be easier to implement and concise, we use `map` function in C. `map` re-maps the a number from one range to another range. In this prgram, we have the distance ranging from 1 to 100. We will map this range to the frequency range from 5000 to 500 since we want the sound to be high when the object is close to the sensor and high otherwise. This function really helps with making the code neat and easy to read. 
+- Now, let's map our distance value with the sound we want the buzzer to emit. We want the sound to be high when we are close to the sensor and low when the object is far away. For this step to be easier to implement and concise, we use `map` function in C. `map` re-maps the a number from one range to another range. In this program, we have the distance ranging from 1 to 100. We will map this range to the frequency range from 5000 to 500 since we want the sound to be high when the object is close to the sensor and high otherwise. This function really helps with making the code neat and easy to read. 
 
-- After each reading, we add a delay `delay(500)` where the program will delay for 500 microsecond before changing its sound as the distance changes. 
+- After each reading, we add a delay `delay(500)` where the program will delay for 500 microseconds before changing its sound as the distance changes. 
 
 ![Picture of the Code](resources/C-Code-DistanceDetector.png)
 
@@ -131,7 +131,7 @@ That's all we have to do to wire the circuit together. Now let's test our result
 
 
 ### Testing
-Now, let's see if your code and your circuit work well. To avoid noise during the testing, this circuit, you should choose a flat surface (e.g., a mini board, wall surface, etc.,). First, hold the Ultrasonic sensor close to the surface. Now, the sound from the buzzer must be high. Now, move the Ultrasonic a bit farther, you should notice that the sound turns lower. 
+Now, let's see if your code and your circuit work well. To avoid noise during the testing, this circuit, you should choose a flat surface (e.g., a mini board, wall surface, etc.,). First, hold the Ultrasonic sensor close to the surface. Now, the sound from the buzzer must be high. Move the Ultrasonic a bit farther, you should notice that the sound turns lower. 
 
 - Now, let's turn our Ultrasonic a static flat surface. Or you can place the Ultrasonic on the edge of a table, hold a flat surface so that we can move the surface closer or farther from the sensor more smoothly. 
 
