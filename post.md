@@ -99,10 +99,35 @@ void loop() {
 
 ![Picture of the Code](resources/C-Code-DistanceDetector.png)
 
+
 ### Wiring Steps
-**Steps:** 
+Now let's proceed to wiring the circuit. WAe will first wire the buzzer:
+- Plug the buzzer onto the breadboard so that the 2 pins span two distict rows. According to our code, we will connect the buzzer `+` to `pin 9` on the Arduino. 
+
+- Then, wire the other end of the buzzer to the Ground (GND).
+
+Next, we will wire the Ultrasonic sensor. The Ultrasonic sensor will be wired on an auxiliary breadboad. Hence, take another smaller breadboad and pin the Ultrasonic sensor on. Now, let's start wire it into the circuit:
+
+- Wire the `Vcc` end to the HIGH hole on the breadboard.
+
+- Wire the `TRIG` end to `PIN 12` on the Arduino. Tak eanother wire, connect the `ECHO` end of the Ultrasonic to the `PIN 11` on the Arduino.
+
+[How the Ultrasonic sensor should be wired to the Arduino](https://drive.google.com/file/d/1QpiMEBEWocV_we-ZWhOsj1qht8jwiiL3/view)
+
+- Wire the Ground to a LOW hole on the breadboard. 
+
+[This is our complete circuit](https://drive.google.com/file/d/1NMJiRnznTmDyTALjPS83z3xSZCcIcmI7/view)
+
+That's all we have to do to wire the circuit together. Now let't test our result. 
+
 
 ### Testing
+Now, let's see if your code and your circuit work well. To avoid noise during the testing, this circuit, you should choose a flat surface (e.g., a mini board, wall surface, etc.,). First, hold the Ultrasonic sensor close to the surface. Now, the sound from the buzzer must be high. Now, move the Ultrasonic a bit farther, you should notice that the sound turns lower. 
+
+- Now, let's turn our Ultrasonic a static flat surface. Or you can place the Ultrasonic on the egde of a table, hold a flat surface so that we can move the surface closer mor farther from the sensor more smoothly. 
+
+- Once, we have our testing set up. Start keep our objetc close to the sensor and then move the object slowly farther. We should hear the sound changing from low to high quite smoothly. We can make the sound changes more smoothly by changing the `delay` parameter in our code so that there will less delayed time between each reading. 
+
 
 ## Conclusion
 Sensors and Actuators are essential components of any hardware design since they determine how a machine interacts and responses to external factors from the environment. This design challenge gave us a glimpse of how to leverage these devices, as well as how useful they are.
